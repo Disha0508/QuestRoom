@@ -1,0 +1,38 @@
+### 1. 
+GET http://localhost:3000/api/quests
+
+### 2. 
+GET http://localhost:3000/api/quests/1
+
+### 3. Ошибка 404: Получение несуществующего квеста
+GET http://localhost:3000/api/quests/999
+
+### 4.
+POST http://localhost:3000/api/quests
+Content-Type: application/json
+
+{
+    "title": "Секрет заброшенного метро",
+    "genre": "Мистика",
+    "status": "draft"
+}
+
+### 5. Ошибка 400: Создание квеста без обязательного поля title
+POST http://localhost:3000/api/quests
+Content-Type: application/json
+
+{
+    "genre": "Хоррор"
+}
+
+### 6.
+PUT http://localhost:3000/api/quests/1
+Content-Type: application/json
+
+{
+    "title": "Тайна старого особняка: Возвращение",
+    "status": "published"
+}
+
+### 7.
+DELETE http://localhost:3000/api/quests/2
